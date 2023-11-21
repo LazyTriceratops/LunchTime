@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+
+
 @main
 struct LunchTimeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let spotsModel: SpotsModel = SpotsModel()
+            
+            ContentView(spotsModel: spotsModel)
         }
     }
 }

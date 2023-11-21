@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3ADC2C2B0600EE00E18F6E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3ADC2B2B0600EE00E18F6E /* LocationManager.swift */; };
+		2EE5B06A2B0590DC0012D74F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE5B0692B0590DC0012D74F /* NetworkService.swift */; };
+		2EEF26FF2B0719BA009530A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF26FE2B0719BA009530A8 /* MapView.swift */; };
+		2EEF27012B071A2D009530A8 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27002B071A2D009530A8 /* ListView.swift */; };
+		2EEF27032B071B93009530A8 /* LunchTimeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27022B071B93009530A8 /* LunchTimeHeader.swift */; };
+		2EEF27052B071C30009530A8 /* MapToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27042B071C30009530A8 /* MapToggleButton.swift */; };
+		2EEF27072B076BC1009530A8 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27062B076BC1009530A8 /* Spot.swift */; };
+		2EEF270D2B085770009530A8 /* SpotCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF270C2B085770009530A8 /* SpotCardView.swift */; };
+		2EEF270F2B089313009530A8 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF270E2B089313009530A8 /* CacheAsyncImage.swift */; };
+		2EEF27152B08AD4A009530A8 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27142B08AD4A009530A8 /* SpotDetailView.swift */; };
+		2EEF27172B08B173009530A8 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27162B08B173009530A8 /* StarRatingView.swift */; };
+		2EEF271B2B0AEA55009530A8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF271A2B0AEA54009530A8 /* Endpoint.swift */; };
+		2EEF271D2B0B1E3B009530A8 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF271C2B0B1E3B009530A8 /* FilterButton.swift */; };
+		2EEF271F2B0B2933009530A8 /* SpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF271E2B0B2933009530A8 /* SpotsModel.swift */; };
+		2EEF27222B0CCD67009530A8 /* LTAnnotationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF27212B0CCD67009530A8 /* LTAnnotationContentView.swift */; };
 		2EF3C6EB2B043FAF008918A4 /* LunchTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3C6EA2B043FAF008918A4 /* LunchTimeApp.swift */; };
 		2EF3C6ED2B043FAF008918A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3C6EC2B043FAF008918A4 /* ContentView.swift */; };
 		2EF3C6EF2B043FC3008918A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF3C6EE2B043FC3008918A4 /* Assets.xcassets */; };
@@ -34,6 +49,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E3ADC2B2B0600EE00E18F6E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2EE5B0692B0590DC0012D74F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2EEF26FE2B0719BA009530A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2EEF27002B071A2D009530A8 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		2EEF27022B071B93009530A8 /* LunchTimeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeHeader.swift; sourceTree = "<group>"; };
+		2EEF27042B071C30009530A8 /* MapToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToggleButton.swift; sourceTree = "<group>"; };
+		2EEF27062B076BC1009530A8 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		2EEF270C2B085770009530A8 /* SpotCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCardView.swift; sourceTree = "<group>"; };
+		2EEF270E2B089313009530A8 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		2EEF27142B08AD4A009530A8 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		2EEF27162B08B173009530A8 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		2EEF271A2B0AEA54009530A8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2EEF271C2B0B1E3B009530A8 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		2EEF271E2B0B2933009530A8 /* SpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsModel.swift; sourceTree = "<group>"; };
+		2EEF27202B0C6653009530A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2EEF27212B0CCD67009530A8 /* LTAnnotationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTAnnotationContentView.swift; sourceTree = "<group>"; };
 		2EF3C6E72B043FAF008918A4 /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3C6EA2B043FAF008918A4 /* LunchTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeApp.swift; sourceTree = "<group>"; };
 		2EF3C6EC2B043FAF008918A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +102,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EEF27102B08A0FA009530A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EF3C6EC2B043FAF008918A4 /* ContentView.swift */,
+				2EEF27022B071B93009530A8 /* LunchTimeHeader.swift */,
+				2EEF26FE2B0719BA009530A8 /* MapView.swift */,
+				2EEF27002B071A2D009530A8 /* ListView.swift */,
+				2EEF270C2B085770009530A8 /* SpotCardView.swift */,
+				2EEF27142B08AD4A009530A8 /* SpotDetailView.swift */,
+				2EEF27132B08A199009530A8 /* Helper Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2EEF27112B08A10B009530A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EEF27062B076BC1009530A8 /* Spot.swift */,
+				2EEF271E2B0B2933009530A8 /* SpotsModel.swift */,
+				2EEF27122B08A15A009530A8 /* Utilities */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2EEF27122B08A15A009530A8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2E3ADC2B2B0600EE00E18F6E /* LocationManager.swift */,
+				2EE5B0692B0590DC0012D74F /* NetworkService.swift */,
+				2EEF271A2B0AEA54009530A8 /* Endpoint.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2EEF27132B08A199009530A8 /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				2EEF27212B0CCD67009530A8 /* LTAnnotationContentView.swift */,
+				2EEF27042B071C30009530A8 /* MapToggleButton.swift */,
+				2EEF270E2B089313009530A8 /* CacheAsyncImage.swift */,
+				2EEF27162B08B173009530A8 /* StarRatingView.swift */,
+				2EEF271C2B0B1E3B009530A8 /* FilterButton.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
 		2EF3C6DE2B043FAE008918A4 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +171,10 @@
 		2EF3C6E92B043FAF008918A4 /* LunchTime */ = {
 			isa = PBXGroup;
 			children = (
+				2EEF27202B0C6653009530A8 /* Info.plist */,
 				2EF3C6EA2B043FAF008918A4 /* LunchTimeApp.swift */,
-				2EF3C6EC2B043FAF008918A4 /* ContentView.swift */,
+				2EEF27102B08A0FA009530A8 /* Views */,
+				2EEF27112B08A10B009530A8 /* Models */,
 				2EF3C6EE2B043FC3008918A4 /* Assets.xcassets */,
 				2EF3C6F02B043FC3008918A4 /* Preview Content */,
 			);
@@ -257,7 +336,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EEF271B2B0AEA55009530A8 /* Endpoint.swift in Sources */,
+				2EEF271F2B0B2933009530A8 /* SpotsModel.swift in Sources */,
+				2E3ADC2C2B0600EE00E18F6E /* LocationManager.swift in Sources */,
 				2EF3C6ED2B043FAF008918A4 /* ContentView.swift in Sources */,
+				2EEF27032B071B93009530A8 /* LunchTimeHeader.swift in Sources */,
+				2EEF27012B071A2D009530A8 /* ListView.swift in Sources */,
+				2EEF27052B071C30009530A8 /* MapToggleButton.swift in Sources */,
+				2EEF270F2B089313009530A8 /* CacheAsyncImage.swift in Sources */,
+				2EEF27222B0CCD67009530A8 /* LTAnnotationContentView.swift in Sources */,
+				2EEF271D2B0B1E3B009530A8 /* FilterButton.swift in Sources */,
+				2EEF26FF2B0719BA009530A8 /* MapView.swift in Sources */,
+				2EEF27172B08B173009530A8 /* StarRatingView.swift in Sources */,
+				2EE5B06A2B0590DC0012D74F /* NetworkService.swift in Sources */,
+				2EEF27152B08AD4A009530A8 /* SpotDetailView.swift in Sources */,
+				2EEF270D2B085770009530A8 /* SpotCardView.swift in Sources */,
+				2EEF27072B076BC1009530A8 /* Spot.swift in Sources */,
 				2EF3C6EB2B043FAF008918A4 /* LunchTimeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,17 +513,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LunchTime/Preview Content\"";
 				DEVELOPMENT_TEAM = Y92JF627VV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunchTime/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User location required to find nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +536,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devineror.LunchTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,17 +548,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LunchTime/Preview Content\"";
 				DEVELOPMENT_TEAM = Y92JF627VV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunchTime/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "User location required to find nearby restaurants";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +571,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devineror.LunchTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
