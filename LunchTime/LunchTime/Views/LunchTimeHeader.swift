@@ -19,25 +19,27 @@ struct LunchTimeHeader: View {
     var body: some View {
         VStack {
             HStack {
-                Image("TitleImage")
+                Image("logo lockup")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 300)
             }
             
             HStack {
-                Button("Filter") {
+                Button(action: {
                     isFiltering = true
-                }
+                }, label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30)
+                })
                 .padding(8)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .stroke(.gray, lineWidth: 0.5)
-                }
                 .foregroundStyle(.gray)
-                .shadow(radius: 3)
                 
                 HStack {
+                    Image("search")
+
                     TextField("Search for a restaurant", text: $searchText)
                         .bold()
                         .foregroundStyle(.gray)
@@ -55,16 +57,12 @@ struct LunchTimeHeader: View {
                                 .foregroundStyle(.gray)
                         }
                     })
-                    
-                    Image(systemName: "magnifyingglass")
-                        .foregroundStyle(.allTrailsGreen)
                 }
                 .padding(8)
                 .overlay {
-                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    Capsule(style: .continuous)
                         .stroke(.gray, lineWidth: 0.5)
                 }
-                .shadow(radius: 3)
             }
             .padding()
         }
