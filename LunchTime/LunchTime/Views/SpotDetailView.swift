@@ -20,27 +20,22 @@ struct SpotDetailView: View {
                 Rectangle()
                     .foregroundStyle(.clear)
                 
-                if let photos = spot.photos,
-                   let photo = photos.first,
-                   let ref = photo.photoReference,
-                   let width = photo.width,
-                   let url = NetworkService.shared.photoURL(photoReference: ref, maxWidth: width) {
+                let photo = spot.photos?.first
                     
-                    CacheAsyncImage(url: url) { phase in
-                        if case let .success(image) = phase {
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding()
-                        } else {
-                            ProgressView()
-                        }
+                CacheAsyncImage(ref: photo?.photoReference,
+                                width: photo?.width) { phase in
+                    if case let .success(image) = phase {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                        
+                    } else {
+                        Image(systemName: "building.2.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundStyle(.gray)
                     }
-                } else {
-                    Image(systemName: "building.2.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(.gray)
                 }
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9)

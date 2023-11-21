@@ -20,33 +20,33 @@ struct SpotCardView: View {
                 Rectangle()
                     .foregroundStyle(.clear)
                 
-                if let photos = spot.photos,
-                   let photo = photos.first,
-                   let photoRef = photo.photoReference,
-                   let width = photo.width,
-                   let url = NetworkService.shared.photoURL(photoReference: photoRef, maxWidth: width) {
+                let photo = spot.photos?.first
                     
-                    CacheAsyncImage(
-                        url: url) { phase in
+                CacheAsyncImage(ref: photo?.photoReference,
+                                width: photo?.width) { phase in
                             switch phase {
                             case .success(let image):
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+
                             case .failure(let error):
+                                // log error
                                 let _ = print(error)
+                                Image(systemName: "building.2.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundStyle(.gray)
+
                             case .empty:
                                 ProgressView()
+                                
                             @unknown default:
-                                let _ = print("loading failed")
+                                // log unknown
+                                let _ = print("unknown")
+
                             }
                         }
-                } else {
-                    Image(systemName: "building.2.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(.gray)
-                }
             }
             .frame(width: 75, height: 75)
             
