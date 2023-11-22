@@ -14,20 +14,23 @@ struct StarRatingView: View {
     var totalRatings: Int?
     
     var body: some View {
-        HStack {
-            ForEach (0..<5) { star in
-                if let rating = rating {
-                    Image(systemName: "star.fill")
-                        .foregroundStyle(star < Int(rating) ? .yellow : .gray)
-                    
-                } else {
-                    Image(systemName: "star.fill")
-                        .foregroundStyle(.gray)
-                }
+        HStack(spacing: 4) {
+            Image("star")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15)
+            
+            if let rating = rating {
+                Text(String(rating))
+            } else {
+                Text("?")
             }
-            .frame(width: 15)
+            
+            Text("•")
             
             Text("(\(totalRatings ?? 0))")
+                .foregroundStyle(.gray)
+            
         }
     }
 }

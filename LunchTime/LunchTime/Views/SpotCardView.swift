@@ -21,37 +21,39 @@ struct SpotCardView: View {
                     .foregroundStyle(.clear)
                 
                 let photo = spot.photos?.first
-                    
+                
                 CacheAsyncImage(ref: photo?.photoReference,
                                 width: photo?.width) { phase in
-                            switch phase {
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        
+                    case .failure(let error):
+                        // log error
+                        let _ = print(error)
+                        Image(systemName: "building.2.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundStyle(.gray)
+                        
+                    case .empty:
+                        ProgressView()
+                        
+                    @unknown default:
+                        // log unknown
+                        let _ = print("unknown")
+                        
+                    }
+                }
 
-                            case .failure(let error):
-                                // log error
-                                let _ = print(error)
-                                Image(systemName: "building.2.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .foregroundStyle(.gray)
-
-                            case .empty:
-                                ProgressView()
-                                
-                            @unknown default:
-                                // log unknown
-                                let _ = print("unknown")
-
-                            }
-                        }
             }
             .frame(width: 75, height: 75)
             
             VStack(alignment: .leading) {
                 Text(spot.name)
+                    .font(.title)
                     .minimumScaleFactor(0.5)
                 
                 StarRatingView(rating: spot.rating, 
@@ -74,7 +76,7 @@ struct SpotCardView: View {
                     spot.favorite = isFavorited
                     
                 } label: {
-                    Image(systemName: isFavorited ? "heart.fill" : "heart")
+                    Image(isFavorited ? "bookmark-saved" : "bookmark-resting")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)

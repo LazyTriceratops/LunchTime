@@ -58,7 +58,7 @@ struct SpotDetailView: View {
                 spot.favorite = selected
                 
             } label: {
-                Image(systemName: localSelected ? "heart.fill" : "heart")
+                Image(localSelected ? "bookmark-saved" : "bookmark-resting")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
