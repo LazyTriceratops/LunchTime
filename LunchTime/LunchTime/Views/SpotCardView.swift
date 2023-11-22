@@ -12,14 +12,13 @@ import SwiftUI
 
 struct SpotCardView: View {
     @Environment(\.modelContext) var context
-//    @Query var saved: FavoriteSpot?
     @Query var saved: [FavoriteSpot]
     
     @Binding var spot: Spot
     @State var isFavorited: Bool
     @State var isPresenting = false
     
-    init(spot: Binding<Spot>) {        
+    init(spot: Binding<Spot>) {
         _spot = spot
         _saved = Query(filter: #Predicate<FavoriteSpot> { ($0.id == self.spot.id) })
         
@@ -117,13 +116,6 @@ struct SpotCardView: View {
         .popover(isPresented: $isPresenting, content: {
             SpotDetailView(spot: $spot, selected: $isFavorited, localSelected: isFavorited)
         })
-    }
-    
-    func checkContextForId(id: String) -> Bool {
-
-//        context.fetch(FetchDescriptor<FavoriteSpot>)
-        
-        return false
     }
 }
 
