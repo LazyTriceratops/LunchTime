@@ -18,7 +18,7 @@ struct ListView: View {
             LazyVGrid(columns: [gridItem], spacing: 12) {
                 Spacer()
                 ForEach($spots, id: \.id) { $spot in
-                    SpotCardView(spot: $spot, isFavorited: spot.favorite)
+                    SpotCardView(spot: $spot)
                 }
                 Spacer(minLength: 100)
             }

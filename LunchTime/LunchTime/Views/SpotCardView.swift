@@ -5,14 +5,26 @@
 //  Created by Devin Eror on 11/17/23.
 //
 
+import SwiftData
 import SwiftUI
 
 
 
 struct SpotCardView: View {
+    @Environment(\.modelContext) var context
+//    @Query var saved: FavoriteSpot?
+    @Query var saved: [FavoriteSpot]
+    
     @Binding var spot: Spot
     @State var isFavorited: Bool
     @State var isPresenting = false
+    
+    init(spot: Binding<Spot>) {        
+        _spot = spot
+        _saved = Query(filter: #Predicate<FavoriteSpot> { ($0.id == self.spot.id) })
+        
+        isFavorited = !saved.isEmpty
+    }
     
     var body: some View {
         HStack {
@@ -73,8 +85,15 @@ struct SpotCardView: View {
             VStack {
                 Button {
                     isFavorited.toggle()
-                    spot.favorite = isFavorited
                     
+                    if isFavorited {
+                        context.insert(FavoriteSpot(id: spot.id))
+                    } else {
+                        context.delete(FavoriteSpot(id: spot.id))
+                    }
+                    
+                    spot.favorite = isFavorited
+
                 } label: {
                     Image(isFavorited ? "bookmark-saved" : "bookmark-resting")
                         .resizable()
@@ -99,11 +118,18 @@ struct SpotCardView: View {
             SpotDetailView(spot: $spot, selected: $isFavorited, localSelected: isFavorited)
         })
     }
+    
+    func checkContextForId(id: String) -> Bool {
+
+//        context.fetch(FetchDescriptor<FavoriteSpot>)
+        
+        return false
+    }
 }
 
 
 
 #Preview {
     @State var spot = Spot()
-    return SpotCardView(spot: $spot, isFavorited: spot.favorite)
+    return SpotCardView(spot: $spot)
 }

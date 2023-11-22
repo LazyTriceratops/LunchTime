@@ -17,7 +17,7 @@ struct LTAnnotationContentView: View {
         VStack(spacing: 0) {
             Spacer()
             if isSelected == spot {
-                SpotCardView(spot: $spot, isFavorited: spot.favorite)
+                SpotCardView(spot: $spot)
             }
             
             Image((isSelected == spot) ? "pin-selected" : "pin-resting")
