@@ -12,14 +12,13 @@ import Combine
 
 @MainActor
 class SpotsModel: ObservableObject {
-    private var origionalResults = [[Spot]]()
+    private var spotArchive = [String:[Spot]]()
     private let networkService = NetworkService.shared
     private let locationManager = LocationManager.shared
     
     static let defaultSearchRadius = 5000
     
     @Published var spots = [Spot]()
-    @Published var favoriteSpots = [String:Spot]()  // fill in with in swiftdata.
     
     var subscribers = [AnyCancellable]()
     
@@ -29,21 +28,21 @@ class SpotsModel: ObservableObject {
     }
     
     private func saveOrigionalResults() {
-        if self.origionalResults.isEmpty {
-            self.origionalResults.append(spots)
+        if self.spotArchive.isEmpty {
+            self.spotArchive["nearby"] = spots
         }
     }
     
     func restoreOrigionalResults() {
-        spots = origionalResults[0]
+        spots = spotArchive["nearby"] ?? []
     }
     
     /// Sort locations based on the provided filter.
     func sortSpots(by filter: (SpotFilter)) {
         switch filter {
         case .none:
-            if !origionalResults.isEmpty {
-                spots = origionalResults[0]
+            if let nearby = (spotArchive["nearby"]) {
+                spots = nearby
             }
             
         case .ratingHigh:
