@@ -34,6 +34,7 @@ struct Spot: Codable, Identifiable {
     
     var id: String = ""
     var favorite: Bool = false
+    var distance: Double? = nil
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Spot.CodingKeys.self)
@@ -53,7 +54,13 @@ struct Spot: Codable, Identifiable {
         self.vicinity = try? container.decodeIfPresent(String.self, forKey: .vicinity)
         
         self.id = "\(reference!)-\(name)"
-        self.favorite = false
+        
+        if self.distance == nil {
+            let location = self.geometry.location
+            if let distance = LocationManager.shared.distanceTo(lat: location.lat, lng: location.lng) {
+                self.distance = distance
+            }
+        }
     }
 }
 
@@ -103,27 +110,5 @@ extension Spot: Equatable {
 extension Geometry: Hashable {
     static func == (lhs: Geometry, rhs: Geometry) -> Bool {
         lhs.location == rhs.location
-    }
-}
-
-
-
-extension Spot {
-    /// Initialize Mock Data
-    init() {
-        self.businessStatus = "OPERATIONAL (barely)"
-        self.geometry = Geometry(location: Location(lat: 34.0083, lng: -118.4988))
-        self.name = "Bob's Burgers"
-        self.openingHours = OpeningHours(openNow: true)
-        self.photos = [Photo(height: nil, htmlAttributions: nil, photoReference: "AcJnMuGkOZeL3J5LHbYcB-f1xUpHD8t1FDHTPUX6Xag_ntX7hxuqqGs414B-IfbRXLcCeqUAMTGZ0x1ao8RBWTOhVu5M8DXVUctXqbRcYpqKnvThu6KY5uzkuKHJwszpUPEFHHwZg6bjgKKCHJzE2hBaNc5wjQ7gkBJgpFXYS4jgAGCwdJvN", width: 200)]
-        self.placeID = "1234"
-        self.priceLevel = 1
-        self.rating = 5
-        self.reference = ""
-        self.scope = ""
-        self.types = ["food"]
-        self.userRatingsTotal = 1
-        self.vicinity = "wonder wharf"
-        self.favorite = true
     }
 }

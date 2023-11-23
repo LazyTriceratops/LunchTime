@@ -104,6 +104,5 @@ enum SpotFilter {
 #Preview {
     @State var mockSearch = ""
     @ObservedObject var mockSpots = SpotsModel()
-    mockSpots.spots.append(Spot())
     return LunchTimeHeader(spotsModel: mockSpots, searchText: $mockSearch)
 }

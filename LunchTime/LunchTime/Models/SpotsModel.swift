@@ -10,6 +10,13 @@ import Combine
 
 
 
+// TODO:
+// -[ ]: Add in pagination (store results in spot archive)
+// -[ ]: Add more filter options
+//    -[ ]: price
+//    -[ ]: distance
+// -[ ]: Store favorites in dictionary and save with SwiftData
+
 @MainActor
 class SpotsModel: ObservableObject {
     private var origionalResults = [[Spot]]()

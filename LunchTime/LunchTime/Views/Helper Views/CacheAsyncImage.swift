@@ -67,7 +67,8 @@ struct CacheAsyncImage<Content>: View where Content: View {
 
 
 
-fileprivate class ImageCache {
+// TODO: setup caching
+class ImageCache {
     static private var cache: [URL: Image] = [:]
 
     static subscript(url: URL) -> Image? {
@@ -91,7 +92,7 @@ fileprivate class ImageCache {
             ProgressView()
         case .success(let image):
             image
-        case .failure(let error):
+        case .failure(_):
             ProgressView()
         @unknown default:
             fatalError()

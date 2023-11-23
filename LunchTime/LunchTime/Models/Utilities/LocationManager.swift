@@ -28,6 +28,10 @@ class LocationManager: NSObject, ObservableObject {
     func refreshLocation() {
         locationManager.startUpdatingLocation()
     }
+    
+    func distanceTo(lat: Double, lng: Double) -> Double? {
+        currentLocation?.distance(from: CLLocation(latitude: lat, longitude: lng))
+    }
 }
 
 

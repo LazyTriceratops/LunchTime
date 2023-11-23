@@ -14,6 +14,11 @@ struct SpotCardView: View {
     @State var isFavorited: Bool
     @State var isPresenting = false
     
+    init(spot: Binding<Spot>, isFavorited: Bool) {
+        _spot = spot
+        self.isFavorited = isFavorited
+    }
+    
     var body: some View {
         HStack {
             ZStack {
@@ -63,6 +68,9 @@ struct SpotCardView: View {
                     Text((spot.priceLevel != nil) ? String(repeating: "$", count: spot.priceLevel ?? 0) : "?")
                     Text("•")
                     Text((spot.openingHours?.openNow != nil) ? ((spot.openingHours?.openNow)! ? "Open" : "Closed") : "unknown") // TODO: clean up
+                    if let distance = spot.distance {
+                        Text(String(format: "%.1f", distance / 1000.0) + "km")
+                    }
                 }
                 .font(.subheadline)
                 .foregroundStyle(.gray)
@@ -99,11 +107,4 @@ struct SpotCardView: View {
             SpotDetailView(spot: $spot, selected: $isFavorited, localSelected: isFavorited)
         })
     }
-}
-
-
-
-#Preview {
-    @State var spot = Spot()
-    return SpotCardView(spot: $spot, isFavorited: spot.favorite)
 }

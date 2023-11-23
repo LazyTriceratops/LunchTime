@@ -71,8 +71,3 @@ struct SpotDetailView: View {
         .padding(.top, 50)
     }
 }
-
-#Preview {
-    @State var spot = Spot()
-    return SpotDetailView(spot: $spot, selected: $spot.favorite, localSelected: spot.favorite)
-}

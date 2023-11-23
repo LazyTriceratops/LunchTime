@@ -30,6 +30,5 @@ struct ListView: View {
 
 #Preview {
     @State var mockSpots = [Spot]()
-    mockSpots.append(Spot())
     return ListView(spots: $mockSpots)
 }

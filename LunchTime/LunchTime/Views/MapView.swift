@@ -37,17 +37,19 @@ struct MapView: View {
         .mapControls({
             MapUserLocationButton()
         })
-        .onChange(of: isSelected) {
-            if let coords = isSelected?.coord() {
-                withAnimation(.easeInOut) {
-                    position = .region(MKCoordinateRegion(center: coords, latitudinalMeters: 1600, longitudinalMeters: 1600))
-                }
-            } else {
-                withAnimation(.easeOut) {
-                    position = .automatic
-                }
-            }
-        }
+        // TODO: rework needed (Currently is too clunky on physical device).
+//        .onChange(of: isSelected) {
+//            if let coords = isSelected?.coord() {
+//                withAnimation(.easeInOut) {
+//                    position = .region(MKCoordinateRegion(center: coords, latitudinalMeters: 1600, longitudinalMeters: 1600))
+//                }
+//            }
+//            else {
+//                withAnimation(.easeOut) {
+//                    position = .automatic
+//                }
+//            }
+//        }
     }
 }
 
@@ -63,6 +65,5 @@ extension Spot {
 
 #Preview {
     @State var mockSpots = [Spot]()
-    mockSpots.append(Spot())
     return MapView(spots: $mockSpots)
 }
